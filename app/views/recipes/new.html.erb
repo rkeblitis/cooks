@@ -1,0 +1,16 @@
+<h1>New Recipe</h1>
+<%= form_for @recipe do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
+
+
+
+    <!-- <%= f.hidden_field(:ranking, value: 0) %> -->
+
+    <%= f.submit "Submit" %>
+    <!-- it defaults to the restful route that it is in, it used reasoures -->
+  <% end %>
