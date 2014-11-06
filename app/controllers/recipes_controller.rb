@@ -9,6 +9,8 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(params.require(:recipe).permit(:name, :desription))
+    if Recipe.create(params.require(:recipe).permit(:name, :desription))
+      redirect_to root_path
+    end
   end
 end
