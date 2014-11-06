@@ -1,0 +1,6 @@
+<h1>All Ingredients</h1>
+
+<% @ingredients.each do |ingredient| %>
+  <h2><%=link_to(ingredient.name, ingredient_path(ingredient.id))%></h2>
+<%end %>
+<%= button_to "Add a Ingredient", new_ingredient_path, method: :get %>

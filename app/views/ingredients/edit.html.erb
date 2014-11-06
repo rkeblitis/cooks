@@ -1,0 +1,21 @@
+<h1>Edit <%= @ingredient.name %></h1>
+
+<%= form_for @ingredient do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+
+    <%= f.submit "Submit" %>
+    <!-- it defaults to the restful route that it is in, it used reasoures -->
+  <% end %>
+
+
+
+
+
+
+<%= button_to "Edit", edit_ingredient_path, method: :get %>
+<%= button_to "Delete", edit_ingredient_path, method: :patch %>
+<%= button_to "Recipies", ingredients_path, method: :get %>
+<%= button_to "Home", root_path, method: :get %>

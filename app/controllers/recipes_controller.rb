@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
   def create
 
     if Recipe.create(recipe_params)
-      redirect_to root_path
+      redirect_to recipes_path
     end
   end
 

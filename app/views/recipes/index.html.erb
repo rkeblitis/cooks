@@ -3,3 +3,7 @@
 <% @recipes.each do |recipe| %>
   <h2><%=link_to(recipe.name, recipe_path(recipe.id))%></h2>
 <%end %>
+
+
+
+<%= button_to "Add a Recipe", new_recipe_path, method: :get %>
