@@ -10,9 +10,10 @@ class RecipesController < ApplicationController
 
   def create
 
-    if Recipe.create(recipe_params)
-      redirect_to recipes_path
-    end
+    @recipe_form = Recipe.new(params[:recipe_form])
+      if @recipe_form.submit
+        redirect_to recipes_path
+      end
   end
 
   def show
@@ -42,7 +43,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description)
+    params.require(:recipe).permit(:name, :description, :ingredients)
   end
 
 end

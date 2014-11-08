@@ -1,18 +1,24 @@
 <h1>New Recipe</h1>
-<%= form_for @recipe do |f| %>
+<%= form_tag recipe_path(:id) %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
+<div>
+    <%= label_tag "recipe_form[name]", "Name" %>
+    <%= text_field_tag "recipe_form[name]" %><br>
+</div>
 
-    <%= f.label :description %>
-    <%= f.text_field :description %><br>
+<div>
+    <%= label_tag "recipe_form[description]", "Description" %>
+    <%= text_field_tag "recipe_form[description]" %><br>
+</div>
 
+<div>
+    <%= Ingredient.all.each do |ingredient| %>
+    <p><%= check_box_tag "recipe_form[ingredients][]", ingredient.id %>
+    <%= label_tag "recipe_form[ingredients][]", ingredient.name %><br></p>
+    <%end %>
+</div>
 
-
-    <!-- <%= f.hidden_field(:ranking, value: 0) %> -->
-
-    <%= f.submit "Submit" %>
+    <%= submit_tag "Submit" %>
     <!-- it defaults to the restful route that it is in, it used reasoures -->
-  <% end %>
 
 <%= button_to "Back", recipes_path, method: :get %>
