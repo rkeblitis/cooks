@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   patch "/recipe/:id/edit"          ,to: "recipes#destroy"
 
   # Ingredients Controller
-  
+
   get   "/ingredients"              ,to: "ingredients#index"   ,as: :ingredients
   post  "/ingredients"              ,to: "ingredients#create"
   get   "/ingredient/:id"           ,to: "ingredients#show"    ,as: :ingredient
